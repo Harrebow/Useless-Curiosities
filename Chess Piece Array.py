@@ -1,20 +1,50 @@
-def message():
-    print("Enter a value ")
+EMPTY = "-----"
+ROOK = "ROOK"
+KNIGHT = "KNIGHT"
+BISHOP = "BISHOP"
+QUEEN = "QUEEN"
+KING = "KING"
+PAWN = "PAWN "
+board = []
 
-def isqrt(n):
-    x = n
-    y = (x + 1) / 2
-    while y < x:
-        x = y
-        y = (x + n / x) / 2
-    x = '{0:.3g}'.format(x)
-    return x
+for i in range(8):
+    row = [EMPTY for i in range(8)]
+    board.append(row)
 
-message()
-a = int(input())
-message()
-b = int(input())
+board[0][0] = ROOK
+board[0][1] = KNIGHT
+board[0][2] = BISHOP
+board[0][3] = QUEEN
+board[0][4] = KING
+board[0][5] = BISHOP
+board[0][6] = KNIGHT
+board[0][7] = ROOK
+board[1][0] = PAWN
+board[1][1] = PAWN
+board[1][2] = PAWN
+board[1][3] = PAWN
+board[1][4] = PAWN
+board[1][5] = PAWN
+board[1][6] = PAWN
+board[1][7] = PAWN
+board[6][0] = PAWN
+board[6][1] = PAWN
+board[6][2] = PAWN
+board[6][3] = PAWN
+board[6][4] = PAWN
+board[6][5] = PAWN
+board[6][6] = PAWN
+board[6][7] = PAWN
+board[7][0] = ROOK
+board[7][1] = KNIGHT
+board[7][2] = BISHOP
+board[7][3] = QUEEN
+board[7][4] = KING
+board[7][5] = BISHOP
+board[7][6] = KNIGHT
+board[7][7] = ROOK
 
-c = b**2+a**2
-
-print("The Hypotenues is", isqrt(c))
+for row in board:
+    print("")
+    for piece in row:
+        print(piece,end=" ")
